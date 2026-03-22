@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Lucas Laroca — Desenvolvedor Full-Stack Júnior. Portfólio de projetos web e soluções em tecnologia.">
+  <meta property="og:title" content="Lucas Laroca — Full-Stack Developer">
+  <meta property="og:description" content="Dev Full-Stack Jr | Professor de TI | Castro/PG, PR. Projetos reais, código limpo.">
+  <meta property="og:url" content="https://larocalucas.github.io">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>Lucas Laroca — Full-Stack Developer</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@300;400;500;600;700&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+
+  <!-- React 18 via CDN (produção) -->
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+
+  <!-- Babel standalone para transpilar JSX no browser -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Cursor customizado — só visível no desktop via CSS -->
+  <div id="cursor" aria-hidden="true"></div>
+  <div id="cursor-ring" aria-hidden="true"></div>
+
+  <!-- Ponto de montagem do React -->
+  <div id="root"></div>
+
+  <!-- Scripts em ordem: dados → componentes → app -->
+  <script type="text/babel" src="js/data.js"></script>
+  <script type="text/babel" src="js/components.jsx"></script>
+  <script type="text/babel" src="js/app.jsx"></script>
+
+</body>
+</html>
