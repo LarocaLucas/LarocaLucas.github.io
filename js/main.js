@@ -67,7 +67,7 @@
     const midia = el("div", "cartao__midia");
     const im = el("img");
     im.src = `img/${p.img}.webp`; im.alt = `Tela do projeto ${p.nome}`;
-    im.width = 1280; im.height = 720; im.loading = "lazy"; im.decoding = "async";
+    im.width = 1280; im.height = 720; im.decoding = "async"; im.fetchPriority = "low";
     midia.append(im);
     if (p.selo) midia.append(el("span", "cartao__selo", p.selo));
     const cab = el("div", "cartao__cabeca");
