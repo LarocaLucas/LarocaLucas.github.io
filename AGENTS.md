@@ -15,9 +15,12 @@ Push na `main` publica no GitHub Pages: só com o ok do dono.
 - Degradê nos títulos é proposital (referência Jack); exceções do detector do impeccable em `.impeccable/config.json`.
 
 ## Estado atual
-v2 (08/11/2026) pronta e testada localmente, numa branch; aguardando ok do dono para publicar.
+v2 no ar desde 08/11/2026 (commit 9c98e42), publicada com o ok do dono.
 
 ## Registro
+### 08/11/2026 — Claude Code (publicação)
+- Ok do dono: `feat/portfolio-v2` juntada na `main` (fast-forward) e publicada no GitHub Pages. Depois, imagens dos cards passaram a carregar logo no início (sem lazy, prioridade baixa): rolando rápido elas apareciam com atraso.
+- Testes no endereço publicado: 1440×900 e 390×844, 16 cards, 16 imagens carregadas, sem erro no console, sem rolagem horizontal; og.png responde 200.
 ### 08/11/2026 — Claude Code (imagens)
 - Pedido do dono: as imagens dos projetos estavam ruins (algumas pareciam não carregar, outras mostravam só trechos de texto).
 - Feito: todas as 16 imagens refeitas. Sites capturados ao vivo pelo topo; Mapa 3D da Door em "Apresentar"; Mapas 3D com uma cena de palco montada; Calculadora na tela de proposta do cliente (sem margens); Moda e Odonto pelos painéis; HelpDesk com saída real do terminal (Rich, chamados de exemplo numa cópia local do banco); capas desenhadas para Sys Door, Central, Revenda, Teyun e AWS. Cards sem animação de entrada (às vezes ficavam invisíveis ao pular a rolagem). Código das miniaturas geradas removido.
