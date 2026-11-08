@@ -1,0 +1,35 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "gradient-text",
+        "value": "*",
+        "files": [
+          "css/style.css"
+        ],
+        "createdAt": "2026-11-08T22:48:03.753Z",
+        "reason": "Dono pediu a referência 3D Jack (motionsites), cuja assinatura são os títulos gigantes em degradê cinza; mesmo padrão aprovado no laroca.dev"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-11-08T22:54:09.366Z",
+        "reason": "Claude: falso positivo, cada link da lista de contato tem 22px de padding vertical; a borda é só o divisor"
+      },
+      {
+        "rule": "clipped-overflow-container",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-11-08T22:54:09.448Z",
+        "reason": "Claude: body com overflow-x clip só como rede para os títulos gigantes; os filhos posicionados são fixed e não são cortados"
+      }
+    ]
+  }
+}

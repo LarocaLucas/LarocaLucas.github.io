@@ -3,41 +3,210 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="description" content="Lucas Laroca — Desenvolvedor Full-Stack Júnior. Portfólio de projetos web e soluções em tecnologia.">
-  <meta property="og:title" content="Lucas Laroca — Full-Stack Developer">
-  <meta property="og:description" content="Dev Full-Stack Jr | Professor de TI | Castro/PG, PR. Projetos reais, código limpo.">
-  <meta property="og:url" content="https://larocalucas.github.io">
+  <title>Lucas Laroca · Dev full-stack</title>
+  <meta name="description" content="Lucas Laroca, desenvolvedor full-stack em Castro e Ponta Grossa (PR) e fundador da laroca.dev. Sites, sistemas, mapas 3D e ferramentas em uso por negócios reais.">
+  <meta name="theme-color" content="#050506">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Lucas Laroca · Dev full-stack">
+  <meta property="og:description" content="Fundador da laroca.dev. Sites, sistemas, mapas 3D e ferramentas em uso por negócios reais.">
+  <meta property="og:url" content="https://larocalucas.github.io/">
+  <meta property="og:image" content="https://larocalucas.github.io/img/og.png">
   <meta name="twitter:card" content="summary_large_image">
-  <title>Lucas Laroca — Full-Stack Developer</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
 
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@300;400;500;600;700&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=2.0.4">
 
-  <!-- React 18 via CDN (produção) -->
-  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-
-  <!-- Babel standalone para transpilar JSX no browser -->
-  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-
-  <!-- Estilos -->
-  <link rel="stylesheet" href="css/style.css">
+  <script type="importmap">
+    { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js" } }
+  </script>
+  <script type="module" src="js/particulas.js?v=2.0.4"></script>
+  <script defer src="js/main.js?v=2.0.4"></script>
 </head>
 <body>
+  <a class="pular" href="#projetos">Pular para os projetos</a>
+  <canvas id="particulas" aria-hidden="true"></canvas>
 
-  <!-- Cursor customizado — só visível no desktop via CSS -->
-  <div id="cursor" aria-hidden="true"></div>
-  <div id="cursor-ring" aria-hidden="true"></div>
+  <header class="topo">
+    <a class="marca" href="#inicio" aria-label="Lucas Laroca, início">
+      <svg class="marca__logo" viewBox="0 0 48 48" aria-hidden="true">
+        <circle cx="24" cy="24" r="22.5" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M18 13v22h13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square"/>
+        <circle cx="32" cy="15" r="2.4" fill="var(--acento)"/>
+      </svg>
+      <span class="marca__texto">
+        <strong>LUCAS LAROCA</strong>
+        <small>DEV FULL-STACK</small>
+      </span>
+    </a>
+    <nav class="menu" aria-label="Seções">
+      <a href="#projetos">Projetos</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#trajetoria">Trajetória</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <a class="contador" href="#projetos" aria-label="Ver os projetos"><span id="total-projetos">15</span></a>
+  </header>
 
-  <!-- Ponto de montagem do React -->
-  <div id="root"></div>
+  <main>
+    <section class="hero" id="inicio" aria-labelledby="titulo-hero">
+      <div class="hero__info">
+        <div class="bloco">
+          <p class="rotulo">[INFO]</p>
+          <p>Desenvolvedor full-stack em Castro e Ponta Grossa, no Paraná. Fundador da <a href="https://laroca.dev" target="_blank" rel="noopener">laroca.dev</a>, onde construo sites, sistemas e ferramentas para negócios de verdade: balada, DJ, loja, clínica, revenda.</p>
+        </div>
+        <div class="bloco">
+          <p class="rotulo">[AGORA]</p>
+          <ul class="lista">
+            <li>Ingressos e caixa da Door</li>
+            <li>Central laroca.dev</li>
+            <li>Sistemas Moda, Odonto e Revenda</li>
+          </ul>
+        </div>
+        <div class="bloco">
+          <p class="rotulo">[ABERTO A]</p>
+          <p>Projetos sob medida pela laroca.dev. E uma conversa, se aparecer uma vaga remota que valha a pena.</p>
+        </div>
+        <p class="terminal" aria-label="Status: aceitando projetos"><span aria-hidden="true">$ status</span> <span class="terminal__saida" data-digitar="aceitando projetos" aria-hidden="true"></span><span class="cursor" aria-hidden="true"></span></p>
+      </div>
 
-  <!-- Scripts em ordem: dados → componentes → app -->
-  <script type="text/babel" src="js/data.js"></script>
-  <script type="text/babel" src="js/components.jsx"></script>
-  <script type="text/babel" src="js/app.jsx"></script>
+      <div class="hero__base">
+        <p class="hero__linha"><span>Do servidor à interface</span><span>Castro · PG — PR</span></p>
+        <h1 class="titulo-gigante" id="titulo-hero" aria-label="Lucas Laroca">
+          <span class="titulo-gigante__linha" aria-hidden="true">LUCAS</span>
+          <span class="titulo-gigante__linha" aria-hidden="true">LAROCA</span>
+        </h1>
+      </div>
+    </section>
 
+    <section class="secao" id="projetos" aria-labelledby="titulo-projetos">
+      <div class="secao__cabeca">
+        <p class="rotulo">[PROJETOS]</p>
+        <h2 class="titulo-secao" id="titulo-projetos">Trabalho no ar</h2>
+        <p class="secao__intro">Sites, sistemas e ferramentas em uso por clientes, ou por mim no dia a dia. Os que estão em construção aparecem marcados.</p>
+      </div>
+
+      <div class="filtros" role="toolbar" aria-label="Filtrar projetos">
+        <button type="button" class="filtro" aria-pressed="true" data-filtro="todos">Todos</button>
+        <button type="button" class="filtro" aria-pressed="false" data-filtro="sites">Sites</button>
+        <button type="button" class="filtro" aria-pressed="false" data-filtro="sistemas">Sistemas</button>
+        <button type="button" class="filtro" aria-pressed="false" data-filtro="3d">3D</button>
+        <button type="button" class="filtro" aria-pressed="false" data-filtro="ferramentas">Ferramentas</button>
+        <button type="button" class="filtro" aria-pressed="false" data-filtro="aberto">Código aberto</button>
+      </div>
+      <p class="filtros__status" id="filtros-status" aria-live="polite"></p>
+
+      <ul class="grade" id="grade-projetos"></ul>
+    </section>
+
+    <section class="secao" id="sobre" aria-labelledby="titulo-sobre">
+      <div class="secao__cabeca">
+        <p class="rotulo">[SOBRE]</p>
+        <h2 class="titulo-secao" id="titulo-sobre">Quem constrói</h2>
+      </div>
+      <div class="sobre">
+        <div class="sobre__texto">
+          <p class="sobre__abre">Eu entendo o problema, desenho, programo, publico e continuo cuidando depois.</p>
+          <p>Comecei em sala de aula: programação, redes e robótica para mais de 200 alunos, e a infraestrutura de TI de um colégio. Essa base me deu duas coisas que uso todo dia: saber explicar tecnologia para quem não é da área e não ter medo de mexer do servidor à interface.</p>
+          <p>Hoje toco a laroca.dev. Os projetos vão de site de balada a sistema com nota fiscal, venda de ingressos com LGPD e mapa 3D de casa noturna. Curso Engenharia de Software na UniCesumar (conclusão em 2027) e há mais de 10 anos sou DJ, o que explica tanto projeto de evento por aqui.</p>
+        </div>
+        <dl class="numeros">
+          <div><dt>Anos em TI</dt><dd>5+</dd></div>
+          <div><dt>Projetos aqui</dt><dd id="numero-projetos">15</dd></div>
+          <div><dt>Alunos</dt><dd>200+</dd></div>
+          <div><dt>Anos de DJ</dt><dd>10+</dd></div>
+        </dl>
+      </div>
+
+      <div class="stack">
+        <p class="rotulo">[STACK]</p>
+        <dl class="stack__grade">
+          <div><dt>Front</dt><dd>TypeScript · React · Next.js · Vite · Tailwind · HTML/CSS na mão</dd></div>
+          <div><dt>Back</dt><dd>Node.js · NestJS · Python · Prisma · Drizzle · Zod</dd></div>
+          <div><dt>Dados</dt><dd>PostgreSQL · Supabase · SQLite · Cloudflare D1</dd></div>
+          <div><dt>Nuvem</dt><dd>Cloudflare Workers, Pages, R2 e Access · Docker · Linux · AWS</dd></div>
+          <div><dt>3D e movimento</dt><dd>three.js · GSAP · Motion</dd></div>
+          <div><dt>Desktop</dt><dd>Electron · Python no Windows</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="secao" id="trajetoria" aria-labelledby="titulo-trajetoria">
+      <div class="secao__cabeca">
+        <p class="rotulo">[TRAJETÓRIA]</p>
+        <h2 class="titulo-secao" id="titulo-trajetoria">Até aqui</h2>
+      </div>
+      <ol class="linha-tempo">
+        <li>
+          <p class="linha-tempo__quando">Hoje</p>
+          <div>
+            <h3>Fundador e desenvolvedor</h3>
+            <p class="linha-tempo__onde">laroca.dev · Castro, PR</p>
+            <p>Sites, sistemas e ferramentas sob medida, do briefing à publicação e ao suporte. Clientes de eventos, música e varejo.</p>
+          </div>
+        </li>
+        <li>
+          <p class="linha-tempo__quando">2024</p>
+          <div>
+            <h3>Professor de Desenvolvimento de Sistemas</h3>
+            <p class="linha-tempo__onde">NRE Ponta Grossa · Colégio Vespasiano</p>
+            <p>Python, JavaScript, SQL e redes para turmas de até 35 alunos, com projetos levados até a publicação usando Git e GitHub.</p>
+          </div>
+        </li>
+        <li>
+          <p class="linha-tempo__quando">2024</p>
+          <div>
+            <h3>Professor de Informática e Jogos</h3>
+            <p class="linha-tempo__onde">CENAIC · Castro, PR</p>
+            <p>Unity, Construct e Scratch, do ensino básico ao técnico.</p>
+          </div>
+        </li>
+        <li>
+          <p class="linha-tempo__quando">2023</p>
+          <div>
+            <h3>Responsável pela área de TI</h3>
+            <p class="linha-tempo__onde">TECNOLIMP · Colégio Vespasiano</p>
+            <p>Redes, servidores locais e suporte. Melhorias nos laboratórios e nos processos administrativos.</p>
+          </div>
+        </li>
+        <li>
+          <p class="linha-tempo__quando">2023</p>
+          <div>
+            <h3>Monitor de Desenvolvimento de Sistemas</h3>
+            <p class="linha-tempo__onde">UniCesumar · Castro, PR</p>
+            <p>Aulas práticas de Python, C e JavaScript e orientação individual em lógica e Git.</p>
+          </div>
+        </li>
+        <li>
+          <p class="linha-tempo__quando">2021</p>
+          <div>
+            <h3>Professor de Robótica e Programação</h3>
+            <p class="linha-tempo__onde">CodeBuddy · Castro, PR</p>
+            <p>Robótica educacional com Arduino e LEGO Education.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section class="secao contato" id="contato" aria-labelledby="titulo-contato">
+      <p class="rotulo">[CONTATO]</p>
+      <h2 class="titulo-gigante titulo-gigante--contato" id="titulo-contato">Vamos<br>conversar</h2>
+      <ul class="contato__lista">
+        <li><a href="mailto:lucas.laroca.campos@gmail.com"><span>E-mail</span><span>lucas.laroca.campos@gmail.com</span></a></li>
+        <li><a href="https://wa.me/5542998650294?text=Ol%C3%A1%20Lucas!%20Vi%20seu%20portf%C3%B3lio." target="_blank" rel="noopener"><span>WhatsApp</span><span>(42) 99865-0294</span></a></li>
+        <li><a href="https://github.com/LarocaLucas" target="_blank" rel="noopener"><span>GitHub</span><span>LarocaLucas</span></a></li>
+        <li><a href="https://linkedin.com/in/lucas-laroca-campos-3a80661b9" target="_blank" rel="noopener"><span>LinkedIn</span><span>lucas-laroca-campos</span></a></li>
+      </ul>
+      <p class="contato__empresa">Precisa de um site ou sistema para o seu negócio? Fale com a <a href="https://laroca.dev" target="_blank" rel="noopener">laroca.dev</a>.</p>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <span>© 2026 Lucas Laroca</span>
+    <span>Castro – PR</span>
+    <span>HTML, CSS, JS e three.js, sem framework</span>
+  </footer>
 </body>
 </html>
