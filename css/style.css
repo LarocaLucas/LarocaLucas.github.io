@@ -186,12 +186,12 @@ main, .rodape { position: relative; z-index: 1; }
   position: relative; aspect-ratio: 16 / 9; overflow: hidden;
   background: var(--fundo-2); border: 1px solid var(--linha);
 }
-.cartao__midia img, .cartao__midia canvas {
-  width: 100%; height: 100%; object-fit: cover; object-position: top;
+.cartao__midia img {
+  width: 100%; height: 100%; object-fit: cover;
   transition: transform 0.7s var(--saida);
 }
 @media (hover: hover) {
-  .cartao:hover .cartao__midia img, .cartao:hover .cartao__midia canvas { transform: scale(1.035); }
+  .cartao:hover .cartao__midia img { transform: scale(1.035); }
 }
 .cartao__selo {
   position: absolute; left: 10px; top: 10px;
