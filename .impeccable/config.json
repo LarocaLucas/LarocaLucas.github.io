@@ -29,6 +29,24 @@
         ],
         "createdAt": "2026-11-08T22:54:09.448Z",
         "reason": "Claude: body com overflow-x clip só como rede para os títulos gigantes; os filhos posicionados são fixed e não são cortados"
+      },
+      {
+        "rule": "gradient-text",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-11-08T22:55:50.252Z",
+        "reason": "Dono pediu a referência 3D Jack (títulos gigantes em degradê); mesma exceção já registrada para css/style.css"
+      },
+      {
+        "rule": "all-caps-body",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-11-08T22:55:50.347Z",
+        "reason": "Claude: só rótulos e itens de lista curtos (31-39 caracteres) no estilo Axon; os parágrafos já estão em caixa normal"
       }
     ]
   }
